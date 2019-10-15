@@ -5,15 +5,14 @@
   },
   "api": {
     "projectId": "ee2bu90g",
-    "dataset": "production"
+    "dataset": "prod"
   },
   "plugins": [
     "@sanity/base",
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool",
-    "@sanity/google-maps-input"
+    "@sanity/desk-tool"
   ],
   "parts": [
     {
