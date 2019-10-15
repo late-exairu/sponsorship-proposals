@@ -1,0 +1,144 @@
+%svg-common {
+	background: url("../sprite.svg") no-repeat;
+}
+
+.svg-feature_1 {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+.svg-feature_1-dims {
+	width: 31.062px;
+	height: 31.009px;
+}
+
+.svg-feature_2 {
+	@extend %svg-common;
+	background-position: 12.525442304681384% 13.333333333333334%;
+}
+
+.svg-feature_2-dims {
+	width: 24.52px;
+	height: 32px;
+}
+
+.svg-feature_3 {
+	@extend %svg-common;
+	background-position: 22.983870967741936% 26.63337494798169%;
+}
+
+.svg-feature_3-dims {
+	width: 32px;
+	height: 31.7px;
+}
+
+.svg-icon-fb {
+	@extend %svg-common;
+	background-position: 32.481751824817515% 36.92307692307692%;
+}
+
+.svg-icon-fb-dims {
+	width: 6px;
+	height: 12px;
+}
+
+.svg-icon-gh {
+	@extend %svg-common;
+	background-position: 36.67953667953668% 42.857142857142854%;
+}
+
+.svg-icon-gh-dims {
+	width: 21px;
+	height: 20px;
+}
+
+.svg-icon-med {
+	@extend %svg-common;
+	background-position: 43.7851507945495% 49.23076923076923%;
+}
+
+.svg-icon-med-dims {
+	width: 15.07px;
+	height: 12px;
+}
+
+.svg-icon-sl {
+	@extend %svg-common;
+	background-position: 49.664389128013724% 54.30966595676175%;
+}
+
+.svg-icon-sl-dims {
+	width: 14.216px;
+	height: 14.219px;
+}
+
+.svg-icon-tw {
+	@extend %svg-common;
+	background-position: 55.46332629037126% 59.61538461538461%;
+}
+
+.svg-icon-tw-dims {
+	width: 14.96px;
+	height: 12px;
+}
+
+.svg-icon-web {
+	@extend %svg-common;
+	background-position: 61.36363636363637% 65.234375%;
+}
+
+.svg-icon-web-dims {
+	width: 16px;
+	height: 16px;
+}
+
+.svg-icon-yt {
+	@extend %svg-common;
+	background-position: 67.68060836501901% 70.38461538461539%;
+}
+
+.svg-icon-yt-dims {
+	width: 17px;
+	height: 12px;
+}
+
+.svg-package-no {
+	@extend %svg-common;
+	background-position: 74.5697896749522% 76.90487458589683%;
+}
+
+.svg-package-no-dims {
+	width: 18.5px;
+	height: 18.44px;
+}
+
+.svg-package-show_1 {
+	@extend %svg-common;
+	background-position: 81.99233716475096% 84.58498023715416%;
+}
+
+.svg-package-show_1-dims {
+	width: 19px;
+	height: 19px;
+}
+
+.svg-package-show_2 {
+	@extend %svg-common;
+	background-position: 89.272030651341% 92.09486166007905%;
+}
+
+.svg-package-show_2-dims {
+	width: 19px;
+	height: 19px;
+}
+
+.svg-package-yes {
+	@extend %svg-common;
+	background-position: 99.82649204953296% 99.6401882092444%;
+}
+
+.svg-package-yes-dims {
+	width: 27.562px;
+	height: 19.09px;
+}
+

@@ -1,0 +1,25 @@
+<section class="section motivation" id="motivation">
+	<div class="container">
+		<h3 class="section__title">What you get as a sponsor</h3>
+
+		<div class="features">
+			{% for item in features %}
+			<div class="feature" data-aos="{{item.animation}}" data-aos-delay="{{item.animDelay}}">
+				<div class="feature__img-wrap">
+					<svg class="feature__img {{item.iconClass}}" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#{{item.iconSvg}}"></use>
+					</svg>
+				</div>
+
+				<h3 class="feature__title">{{item.title}}</h3>
+
+				<ul class="feature__list">
+					{% for line in item.desc %}
+					<li>{{line}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

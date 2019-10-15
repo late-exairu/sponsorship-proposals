@@ -1,0 +1,181 @@
+.partners{
+	
+
+	&__video{
+		margin: 120px 0 90px;
+		width: 100%;
+		height: 660px;
+	}
+
+	&__btn{
+
+	}
+
+	@include xl{
+
+		&__video{
+			height: 540px;
+		}
+	}
+
+	@include med{
+
+		&__video{
+			margin: 90px 0 60px;
+			height: 390px;
+		}
+	}
+
+	@include sm{
+
+		&__video{
+			height: 270px;
+		}
+	}
+}
+
+.recommendations{
+	padding: 148px 0 100px;
+
+	&:before{
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 55px;
+		transform: translateX(-50%);
+		width: 53px;
+		height: 43px;
+		background: #f00;
+		background: url(../img/quote-marks.svg) center center no-repeat;
+	}
+
+	&__item{
+		outline: none;
+	}
+
+	&__text{
+		line-height: 1.68;
+		font-size: 24px;
+		max-width: 970px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.slick-dots{
+		padding: 0;
+		margin: 50px 0 0;
+		list-style: none;
+		display: flex;
+		justify-content: center;
+
+		li{
+			margin: 0 4px;
+
+			&.slick-active{
+
+				&:after{
+					opacity: 1;
+				}
+			}
+
+			&:after{
+				content: '';
+				width: 7px;
+				height: 7px;
+				background: #767575;
+				opacity: 0.5;
+				display: block;
+				border-radius: 3.5px;
+				border: none;
+				font: 0/0 a;
+				cursor: pointer;
+			}
+
+			button{
+				display: none;
+			}
+		}
+	}
+
+	@include lg{
+
+		&__text{
+			font-size: 2.3vw;
+		}
+	}
+
+	@include sm{
+		padding: 90px 0 50px;
+
+		&:before{
+			top: 25px;
+			width: 40px;
+			height: 36px;
+			background-size: 100%;
+		}
+
+		&__text{
+			font-size: 14px;
+		}
+
+		.slick-dots{
+			margin: 25px 0 0;
+		}
+	}
+}
+
+.user-info{
+	display: flex;
+	justify-content: center;
+	margin: 36px auto 0;
+
+	&__left{
+		margin: 0 20px 0 0;
+	}
+
+	&__right{
+		padding: 5px 0;
+	}
+
+	&__pic{
+		width: 64px;
+		height: 64px;
+		border-radius: 50%;
+	}
+
+	&__name{
+		font-size: 18px;
+		line-height: 1.6;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__company{
+		font-size: 16px;
+		line-height: 1.6;
+		margin: 0;
+		padding: 0;
+	}
+
+	@include sm{
+		margin: 20px auto 0;
+
+		&__pic{
+			width: 50px;
+			height: 50px;
+			
+		}
+
+		&__right{
+			padding: 0;
+		}
+
+		&__name{
+			font-size: 16px;
+		}
+
+		&__company{
+			font-size: 14px;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+	<button class="menu-toggle">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+
+	<header class="header">
+		<div class="container">
+			<div class="header__nav">
+				<nav class="nav">
+					{% if inner %}
+					<li class="nav__item"><a class="nav__link" href="/">Menu on inner page</a></li>
+					{% else %}
+					<li class="nav__item"><a class="nav__link js-scroll-to" href="#motivation">Motivation</a></li>
+					<li class="nav__item"><a class="nav__link js-scroll-to" href="#stats">Stats</a></li>
+					<li class="nav__item"><a class="nav__link js-scroll-to" href="#packages">Packages and addons</a></li>
+					<li class="nav__item"><a class="nav__link js-scroll-to" href="#partners">Partners</a></li>
+					<li class="nav__item"><a class="nav__link js-scroll-to" href="#footer">Follow us</a></li>
+					{% endif %}
+				</nav>
+
+				<a class="header__btn" href="#">Contact Us</a>
+			</div>
+		</div>
+	</header><!-- .header -->

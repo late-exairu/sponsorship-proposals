@@ -1,0 +1,273 @@
+<section class="section bg-gray packages" id="packages">
+	<div class="container tab-wrap">
+		<h3 class="section__title">Sponsors packages and addons
+			
+			<ul class="packages-switch">
+				<a href="#" class="packages-switch__item active" data-slide="1">
+					<svg class="packages-switch__img" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-show_1"></use>
+					</svg>
+				</a>
+				<a href="#" class="packages-switch__item" data-slide="2">
+					<svg class="packages-switch__img" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-show_2"></use>
+					</svg>
+				</a>
+			</ul>
+		</h3>
+
+		<div class="package-slider">
+			<div class="package-slider__item">
+				<ul class="packege-tiles">
+					{% for item in packageTypes %}
+					<li class="packege-tiles__item js-package-popup" data-aos="fade-up" data-aos-delay="{{item.animDelay}}" data-fancybox data-src="#{{item.id}}">
+						<img class="packege-tiles__pic" src="pic/{{item.pic}}">
+						<h3 class="packege-tiles__title">{{item.title}}</h3>
+						<p class="packege-tiles__desc">{{item.desc | safe}}</p>
+						<p class="packege-tiles__tags">{{item.tags}}</p>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+
+			<div class="package-slider__item">
+				<div class="table-wrapper">
+					<table class="package-table responsive">
+						<tbody>
+							<tr class="package-table__row head">
+								<td class="package-table__col desc"></td>
+								<td class="package-table__col silver">
+									Silver
+									<p class="package-table__price">
+										<span>3000€</span>+vat
+									</p>
+								</td>
+								<td class="package-table__col gold">
+									Gold
+									<p class="package-table__price">
+										<span>8500€</span>+vat
+									</p>
+								</td>
+								<td class="package-table__col platinum">
+									<span class="sold-out">Platinum</span>
+									<p class="package-table__price">
+										<span>8500€</span>+vat
+									</p>
+								</td>
+								<td class="package-table__col diversity">
+									Diversity
+									<p class="package-table__price">
+										<span>15000€</span>+vat
+									</p>
+								</td>
+							</tr>
+
+							<tr class="package-table__row">
+								<td class="package-table__col desc">Logo placed on the conference website, introduction/mid-session slides and throughout venue</td>
+								<td class="package-table__col silver">medium</td>
+								<td class="package-table__col gold" rowspan="2">large</td>
+								<td class="package-table__col gold" rowspan="2">large</td>
+								<td class="package-table__col general" rowspan="2">unique large</td>
+							</tr>
+
+							<tr class="package-table__row">
+								<td class="package-table__col desc">Logo placed on printed booklets, video recordings</td>
+								<td class="package-table__col silver">
+									<svg class="package-table__icon-no" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-no"></use>
+									</svg>
+								</td>
+							</tr>
+
+							<tr class="package-table__row">
+								<td class="package-table__col desc">Conference tickets</td>
+								<td class="package-table__col silver">2</td>
+								<td class="package-table__col gold">4</td>
+								<td class="package-table__col gold">4 + party tickets</td>
+								<td class="package-table__col general">8</td>
+							</tr>
+
+							<tr class="package-table__row">
+								<td class="package-table__col desc">Sponsor announcement in social media channels<br/>(Twitter, Facebook, Medium)</td>
+								<td class="package-table__col silver">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+								<td class="package-table__col gold">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+								<td class="package-table__col gold">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+								<td class="package-table__col general">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+							</tr>
+
+							<tr class="package-table__row">
+								<td class="package-table__col desc">Job announcement</td>
+								<td class="package-table__col silver">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+								<td class="package-table__col gold">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+								<td class="package-table__col gold">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+								<td class="package-table__col general">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+							</tr>
+
+							<tr class="package-table__row">
+								<td class="package-table__col desc">Individual highlight in between the talks</td>
+								<td class="package-table__col silver">
+									<svg class="package-table__icon-no" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-no"></use>
+									</svg>
+								</td>
+								<td class="package-table__col gold">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+								<td class="package-table__col gold">
+									<svg class="package-table__icon-no" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-no"></use>
+									</svg>
+								</td>
+								<td class="package-table__col general">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+							</tr>
+
+							<tr class="package-table__row">
+								<td class="package-table__col desc">Branded booth</td>
+								<td class="package-table__col silver">
+									<svg class="package-table__icon-no" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-no"></use>
+									</svg>
+								</td>
+								<td class="package-table__col gold">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+								<td class="package-table__col gold">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+								<td class="package-table__col general">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+							</tr>
+
+							<tr class="package-table__row">
+								<td class="package-table__col desc">Special ideas on request</td>
+								<td class="package-table__col silver">
+									<svg class="package-table__icon-no" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-no"></use>
+									</svg>
+								</td>
+								<td class="package-table__col gold">
+									<svg class="package-table__icon-no" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-no"></use>
+									</svg>
+								</td>
+								<td class="package-table__col gold">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+								<td class="package-table__col general">
+									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
+									</svg>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="packages-slider slider">
+			{% for item in packagesSlider %}
+			<div class="packages-slider__item">
+				<div class="packages-slider__wrap">
+					<img class="packages-slider__pic" src="pic/{{item.pic}}">
+					<p class="packages-slider__title">{{item.title}}</p>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+
+{% for item in packegePopup %}
+<div style="display: none;" id="{{item.id}}" class="package-popup">
+	<div class="package-popup__btn-close" data-fancybox-close>back</div>
+
+	<div class="package-popup__content">
+		<div class="package-popup__left">
+			<h3 class="package-popup__title">{{item.title}}</h3>
+			<p class="package-popup__price">{{item.price}}</p>
+			<h4 class="package-popup__subtitle">{{item.subtitle}}</h4>
+			<p class="package-popup__options">{{item.options}}</p>
+			<p class="package-popup__desc">{{item.desc}}</p>
+
+			<ul class="stuff-list">
+				{% for stuffItem in item.stuffList %}
+				<li class="stuff-list__item">
+					<div class="stuff-list__left">
+						<img class="stuff-list__pic" src="pic/{{stuffItem.pic}}">
+						<a class="stuff-list__more" href="{{stuffItem.moreLink}}">more photos</a>
+					</div>
+					<div class="stuff-list__right">
+						<h4 class="stuff-list__title">{{stuffItem.title}}</h4>
+						<p class="stuff-list__tickets">{{stuffItem.tickets}}</p>
+						<p class="stuff-list__desc">{{stuffItem.desc}}</p>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="package-popup__right">
+			<img class="stuff-list__pic" src="pic/{{item.rightPic}}">
+
+			<ul class="checklist">
+				{% for check in item.checklist %}
+				<li class="checklist__item">
+					<svg class="checklist__icon-{{check.checked}}" role="img" aria-hidden="true">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-{{check.checked}}"></use>
+					</svg>
+					{{check.desc}}
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
+{% endfor %}

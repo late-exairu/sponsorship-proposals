@@ -1,0 +1,25 @@
+{% macro icon(i) %}
+	<svg class="icon icon-{{i}}" role="img" aria-hidden="true">
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#icon-{{i}}"></use>
+	</svg>
+{% endmacro %}
+
+{% macro slider(conf) %}
+	<div class="loc-slider">
+		{% for item in conf.source %}
+		<div class="loc-slider__item">
+			<img src="pic/{{item.img}}">
+		</div>
+		{% endfor %}
+	</div>
+
+	<div class="loc-slider-nav">
+		<div class="pagination"></div>
+		<div class="captions">
+			{% for item in conf.source %}
+			<div class="caption">{{item.caption}}</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endmacro %}
+

@@ -1,0 +1,45 @@
+<section class="section partners" id="partners">
+	<div class="container">
+		<h3 class="section__title">Partners</h3>
+
+		<ul class="recommendations recom-slider">
+			{% for item in recomSlider %}
+			<li class="recommendations__item">
+				<p class="recommendations__text">{{item.text | safe}}</p>
+
+				<div class="user-info">
+					<div class="user-info__left">
+						<img class="user-info__pic" src="pic/{{item.userpic}}">
+					</div>
+					<div class="user-info__right">
+						<p class="user-info__name">{{item.username}}</p>
+						<p class="user-info__company">{{item.userjob}}</p>
+					</div>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+
+		{% for item in sponsors %}
+			<div class="sponsors-block {{item.mod}}">
+				{% if item.title %}
+				<div class="sponsors-block__title">{{item.title}}</div>
+				{% endif %}
+
+				<ul class="sponsors-block__list">
+					{% for sponsor in item.list %}
+						<li class="sponsors-block__item">
+							<a href="{{sponsor.link}}" target="_blank">
+								<img src="pic/sponsors/{{sponsor.img}}" alt="{{sponsor.name}}" width="{{sponsor.width}}">
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endfor %}
+
+		<iframe class="partners__video" data-aos="zoom-in" src="https://www.youtube.com/embed/K_JIIF5xYS4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+		<a class="basic-btn" data-aos="zoom-out-up" href="#">send an email</a>
+	</div>
+</section>

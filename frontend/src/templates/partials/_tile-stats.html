@@ -1,0 +1,13 @@
+<section class="tile-stats">
+	{% for item in tileStats %}
+	<div class="tile-stats__item" data-aos="{{item.animation}}" data-aos-delay="{{item.animDelay}}">
+		{% if item.nums or item.title %}
+		<div class="tile-stats__desc">
+			<p class="tile-stats__nums">{{item.nums}}</p>
+			<p class="tile-stats__title">{{item.title}}</p>
+		</div>
+		{% endif %}
+		<img class="tile-stats__pic" src="img/{{item.img}}" width="336" height="336">
+	</div>
+	{% endfor %}
+</section>

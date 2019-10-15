@@ -1,0 +1,112 @@
+.features{
+	margin: 88px 0 20px;
+	display: flex;
+	justify-content: center;
+
+	@include sm{
+		margin: 50px 0 20px;
+		flex-direction: column;
+	}
+}
+
+.feature{
+	max-width: 270px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 0 50px;
+
+	&__img-wrap{
+		width: 94px;
+		height: 94px;
+		background: var(--clr-theme);
+		background: url(../img/green-elipse.svg) center center no-repeat;
+		background-size: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__img{
+		fill: var(--clr-white);
+
+		&.feature_1{
+			width: 38px;
+			height: 38px;
+		}
+
+		&.feature_2{
+			width: 32px;
+			height: 43px;
+		}
+
+		&.feature_3{
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+	&__title{
+		font-size: 24px;
+		text-align: center;
+		line-height: 1.42;
+		margin: 42px 0 30px;
+		min-height: 68px;
+	}
+
+	&__list{
+		padding: 0;
+		margin: 0;
+		font-size: 16px;
+		line-height: 1.64;
+		list-style: none;
+
+		li{
+			margin: 26px 0 0;
+
+			&:first-child{
+				margin: 0;
+			}
+		}
+	}
+
+	@include xl{
+		margin: 0 25px;
+	}
+
+
+	@include med{
+
+		&:first-child,
+		&:last-child{
+			margin: 0;
+		}
+	}
+
+	@include sm{
+		max-width: none;
+		margin: 50px 0 0;
+
+		&:first-child{
+			margin-top: 0;
+		}
+
+		&:last-child{
+			margin: 50px 0 0;
+		}
+
+		&__title{
+			min-height: 0;
+			margin: 28px 0 22px;
+		}
+
+		&__list{
+			text-align: center;
+
+			li{
+				margin: 18px 0 0;
+			}
+		}
+	}
+}

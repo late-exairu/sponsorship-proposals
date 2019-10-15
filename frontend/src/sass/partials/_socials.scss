@@ -1,0 +1,54 @@
+.social {
+	padding: 0;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__item {
+		margin: 0 8px;
+	}
+
+	&__link {
+		font-size: 17px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 28px;
+		width: 28px;
+
+		.icon {
+			fill: var(--clr-black);
+			transition: 0.3s;
+
+			&.icon-tw{ width: 26px; }
+			&.icon-fb{ width: 12px; }
+			&.icon-yt{ width: 28px; }
+			&.icon-med{ width: 26px; }
+			&.icon-sl{ width: 26px; }
+		}
+		.no-touch & {
+			&:hover {
+				.icon {
+					fill: var(--clr-theme);
+				}
+			}
+		}
+	}
+	&--theme {
+		.social {
+			&__link {
+				font-size: 20px;
+				.icon {
+					fill: var(--clr-grayD);
+				}
+				.no-touch,
+				&:hover {
+					.icon {
+						fill: var(--clr-themeD);
+					}
+				}
+			}
+		}
+	}
+}
