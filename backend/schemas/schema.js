@@ -15,7 +15,7 @@ import Graph from "./Graph";
 import StatTile from "./StatTile";
 import Package from "./Package";
 import PackageAddon from "./PackageAddon";
-
+import { Sponsor, PartnerSlide, PackageSlide } from "./ImageTypes";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,6 +32,9 @@ export default createSchema({
     StatTile,
     Package,
     PackageAddon,
+    Sponsor,
+    PartnerSlide,
+    PackageSlide,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     // blockContent

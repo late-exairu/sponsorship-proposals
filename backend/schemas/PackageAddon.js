@@ -9,8 +9,8 @@ export default {
       type: "string",
     },
     {
-      name: "tickets",
-      title: "Tickets",
+      name: "details",
+      title: "Details",
       type: "string",
     },
     {

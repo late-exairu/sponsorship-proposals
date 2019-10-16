@@ -45,6 +45,11 @@ export default {
       type: "string",
     },
     {
+      name: "options",
+      title: "Options",
+      type: "string",
+    },
+    {
       name: "rightImage",
       title: "Right Image",
       type: "image",

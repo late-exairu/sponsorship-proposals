@@ -225,17 +225,7 @@ export default {
       type: "array",
       of: [
         {
-          type: "image",
-          fields: [
-            {
-              name: "caption",
-              type: "string",
-              title: "Caption",
-              options: {
-                isHighlighted: true, // <-- make this field easily accessible
-              },
-            },
-          ],
+          type: "packageSlide",
         },
       ],
     },
@@ -247,33 +237,7 @@ export default {
       type: "array",
       of: [
         {
-          type: "image",
-          fields: [
-            {
-              name: "name",
-              type: "string",
-              title: "Name",
-              options: {
-                isHighlighted: true, // <-- make this field easily accessible
-              },
-            },
-            {
-              name: "job",
-              type: "string",
-              title: "Job",
-              options: {
-                isHighlighted: true, // <-- make this field easily accessible
-              },
-            },
-            {
-              name: "text",
-              type: "text",
-              title: "Text",
-              options: {
-                isHighlighted: true, // <-- make this field easily accessible
-              },
-            },
-          ],
+          type: "partnerSlide",
         },
       ],
     },
@@ -285,33 +249,7 @@ export default {
       type: "array",
       of: [
         {
-          type: "image",
-          fields: [
-            {
-              name: "name",
-              type: "string",
-              title: "Name",
-              options: {
-                isHighlighted: true, // <-- make this field easily accessible
-              },
-            },
-            {
-              name: "link",
-              type: "url",
-              title: "Name",
-              options: {
-                isHighlighted: true, // <-- make this field easily accessible
-              },
-            },
-            {
-              name: "width",
-              type: "number",
-              title: "Width",
-              options: {
-                isHighlighted: true, // <-- make this field easily accessible
-              },
-            },
-          ],
+          type: "sponsor",
         },
       ],
     },
