@@ -17,12 +17,17 @@ const queryPages = /* GraphQL */ `
 `;
 
 const fetchData = async(client, vars) => {
-  const data = await client
-    .request(queryPages, vars)
-    .then(res => res.data);
+  const data = await client.request(queryPages, vars).then(res => res.data);
 
+  const sponsors = [
+    {
+      title: '',
+      mod: 'sponsors-block_lg',
+      list: data.sponsors,
+    },
+  ];
   return {
-    sponsors: data.sponsors,
+    sponsors,
     youtubeVideo: data.youtube,
   };
 };
