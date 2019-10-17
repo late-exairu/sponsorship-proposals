@@ -10,6 +10,9 @@ if (!process.env.SANITY_ENDPOINT || !process.env.SANITY_TOKEN) {
 
 const brandIDs = {
   amsterdamSummit: '8224681e-d99e-45f5-8dfe-14a916a952e9',
+  gitNation: '1o6NzKrOFXbjf0lhC4oNZr',
+  reactAdvanced: '',
+  berlinDay: '',
 };
 
 const credentials = {

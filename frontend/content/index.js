@@ -22,6 +22,9 @@ const createClient = ({ endpoint, token }) => {
 const client = createClient(credentials);
 
 const getContent = async() => {
+  const brandName = process.env.BRAND_NAME;
+  const brandId = brandIDs[brandName];
+
   const fetchAll = [
     brandContent,
     infoContent,
@@ -34,7 +37,7 @@ const getContent = async() => {
   ].map(async content => {
     try {
       return await content.fetchData(client, {
-        brandId: brandIDs.amsterdamSummit,
+        brandId,
       });
     } catch (err) {
       console.error(err);
@@ -65,7 +68,7 @@ const getContent = async() => {
   );
 
   if (isDebug) {
-    console.log('\nContent\n', JSON.stringify(contentMap, null, 2));
+    console.log('\nContent\n', JSON.stringify(contentMap.packages, null, 2));
   }
 
   return contentMap;
