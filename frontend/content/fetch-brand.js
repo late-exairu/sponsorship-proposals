@@ -1,5 +1,3 @@
-// const { markdownToHtml } = require('./markdown');
-
 const queryPages = /* GraphQL */ `
   query($brandId: ID!) {
     data: Brand(id: $brandId) {

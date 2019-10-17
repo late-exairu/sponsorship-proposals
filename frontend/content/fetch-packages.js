@@ -1,3 +1,5 @@
+const { markdownToHtml } = require('./markdown');
+
 const queryPages = /* GraphQL */ `
   query($brandId: ID!) {
     data: Brand(id: $brandId) {
@@ -14,6 +16,7 @@ const queryPages = /* GraphQL */ `
         price
         subtitle
         description
+        markdown
         options
         rightImage {
           asset {
@@ -52,8 +55,13 @@ const queryPages = /* GraphQL */ `
 const fetchData = async(client, vars) => {
   const data = await client.request(queryPages, vars).then(res => res.data);
 
+  const packages = data.packages.map(async pack => ({
+    ...pack,
+    description: await markdownToHtml(pack.markdown),
+  }));
+
   return {
-    packages: data.packages,
+    packages,
     packageSlides: data.packageSlides,
   };
 };

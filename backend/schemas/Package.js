@@ -45,6 +45,11 @@ export default {
       type: "string",
     },
     {
+      name: "markdown",
+      title: "Description Markdown",
+      type: "text",
+    },
+    {
       name: "options",
       title: "Options",
       type: "string",
