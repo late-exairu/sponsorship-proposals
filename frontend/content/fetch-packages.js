@@ -55,14 +55,34 @@ const queryPages = /* GraphQL */ `
 const fetchData = async(client, vars) => {
   const data = await client.request(queryPages, vars).then(res => res.data);
 
-  const packages = data.packages.map(async pack => ({
+  const packages = data.packages.map(async(pack, ind) => ({
     ...pack,
     description: await markdownToHtml(pack.markdown),
+    animDelay: 100 + ind * 100,
+    checklist:
+      pack.checklist &&
+      pack.checklist.rows
+        .filter(({ cells: [title, check] }) => title !== '-' && check !== '-')
+        .map(({ cells: [title, check] }) => ({
+          title,
+          checked: !!check ? 'yes' : 'no',
+        })),
   }));
 
   return {
     packages,
     packageSlides: data.packageSlides,
+    packegeTabs: [
+      {
+        tabId: 'pckjtab1',
+        tabTitle: 'asd',
+        checked: true,
+      },
+      {
+        tabId: 'pckjtab2',
+        tabTitle: 'fasf',
+      },
+    ],
   };
 };
 
