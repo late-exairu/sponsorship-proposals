@@ -68,7 +68,7 @@ const getContent = async() => {
   );
 
   if (isDebug) {
-    console.log('\nContent\n', JSON.stringify(contentMap.sponsors, null, 2));
+    console.log('\nContent\n', JSON.stringify(contentMap.packages, null, 2));
   }
 
   return contentMap;

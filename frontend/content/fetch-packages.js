@@ -39,6 +39,16 @@ const queryPages = /* GraphQL */ `
             }
           }
         }
+        featPrice
+        featSoldout
+        featLogo1
+        featLogo2
+        featJob
+        featBooth
+        featIdeas
+        featHighlight
+        featAnnouncement
+        featTicketsNumber
       }
       packageSlides {
         image {
@@ -51,6 +61,51 @@ const queryPages = /* GraphQL */ `
     }
   }
 `;
+
+const packageFeatures = [
+  {
+    title:
+      'Logo placed on the conference website, introduction/mid-session slides and throughout venue',
+    field: 'featLogo1',
+    type: 'text',
+  },
+  {
+    title: 'Logo placed on printed booklets, video recordings',
+    field: 'featLogo2',
+    type: 'text',
+  },
+  {
+    title: 'Conference tickets',
+    field: 'featTicketsNumber',
+    type: 'text',
+  },
+  {
+    title:
+      'Sponsor announcement in social media channels<br/>(Twitter, Facebook, Medium)',
+    field: 'featAnnouncement',
+    type: 'check',
+  },
+  {
+    title: 'Job announcement',
+    field: 'featJob',
+    type: 'check',
+  },
+  {
+    title: 'Individual highlight in between the talks',
+    field: 'featHighlight',
+    type: 'check',
+  },
+  {
+    title: 'Branded booth',
+    field: 'featBooth',
+    type: 'check',
+  },
+  {
+    title: 'Special ideas on request',
+    field: 'featIdeas',
+    type: 'check',
+  },
+];
 
 const fetchData = async(client, vars) => {
   const data = await client.request(queryPages, vars).then(res => res.data);
@@ -83,6 +138,7 @@ const fetchData = async(client, vars) => {
         tabTitle: 'fasf',
       },
     ],
+    packageFeatures,
   };
 };
 

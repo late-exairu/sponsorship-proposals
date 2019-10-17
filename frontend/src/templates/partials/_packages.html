@@ -34,178 +34,19 @@
 				<div class="table-wrapper">
 					<table class="package-table responsive">
 						<tbody>
-							<tr class="package-table__row head">
-								<td class="package-table__col desc"></td>
-								<td class="package-table__col silver">
-									Silver
-									<p class="package-table__price">
-										<span>3000€</span>+vat
-									</p>
-								</td>
-								<td class="package-table__col gold">
-									Gold
-									<p class="package-table__price">
-										<span>8500€</span>+vat
-									</p>
-								</td>
-								<td class="package-table__col platinum">
-									<span class="sold-out">Platinum</span>
-									<p class="package-table__price">
-										<span>8500€</span>+vat
-									</p>
-								</td>
-								<td class="package-table__col diversity">
-									Diversity
-									<p class="package-table__price">
-										<span>15000€</span>+vat
-									</p>
-								</td>
-							</tr>
 
-							<tr class="package-table__row">
-								<td class="package-table__col desc">Logo placed on the conference website, introduction/mid-session slides and throughout venue</td>
-								<td class="package-table__col silver">medium</td>
-								<td class="package-table__col gold" rowspan="2">large</td>
-								<td class="package-table__col gold" rowspan="2">large</td>
-								<td class="package-table__col general" rowspan="2">unique large</td>
-							</tr>
+              {% include "partials/package/_header.html" %}
 
-							<tr class="package-table__row">
-								<td class="package-table__col desc">Logo placed on printed booklets, video recordings</td>
-								<td class="package-table__col silver">
-									<svg class="package-table__icon-no" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-no"></use>
-									</svg>
-								</td>
-							</tr>
+              {% for feature in packageFeatures %}
+                {% if feature.type === 'text' %}
+                  {% include "partials/package/_text-row.html" %}
+                {% endif %}
 
-							<tr class="package-table__row">
-								<td class="package-table__col desc">Conference tickets</td>
-								<td class="package-table__col silver">2</td>
-								<td class="package-table__col gold">4</td>
-								<td class="package-table__col gold">4 + party tickets</td>
-								<td class="package-table__col general">8</td>
-							</tr>
+                {% if feature.type === 'check' %}
+                  {% include "partials/package/_check-row.html" %}
+                {% endif %}
+              {% endfor %}
 
-							<tr class="package-table__row">
-								<td class="package-table__col desc">Sponsor announcement in social media channels<br/>(Twitter, Facebook, Medium)</td>
-								<td class="package-table__col silver">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-								<td class="package-table__col gold">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-								<td class="package-table__col gold">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-								<td class="package-table__col general">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-							</tr>
-
-							<tr class="package-table__row">
-								<td class="package-table__col desc">Job announcement</td>
-								<td class="package-table__col silver">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-								<td class="package-table__col gold">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-								<td class="package-table__col gold">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-								<td class="package-table__col general">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-							</tr>
-
-							<tr class="package-table__row">
-								<td class="package-table__col desc">Individual highlight in between the talks</td>
-								<td class="package-table__col silver">
-									<svg class="package-table__icon-no" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-no"></use>
-									</svg>
-								</td>
-								<td class="package-table__col gold">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-								<td class="package-table__col gold">
-									<svg class="package-table__icon-no" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-no"></use>
-									</svg>
-								</td>
-								<td class="package-table__col general">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-							</tr>
-
-							<tr class="package-table__row">
-								<td class="package-table__col desc">Branded booth</td>
-								<td class="package-table__col silver">
-									<svg class="package-table__icon-no" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-no"></use>
-									</svg>
-								</td>
-								<td class="package-table__col gold">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-								<td class="package-table__col gold">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-								<td class="package-table__col general">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-							</tr>
-
-							<tr class="package-table__row">
-								<td class="package-table__col desc">Special ideas on request</td>
-								<td class="package-table__col silver">
-									<svg class="package-table__icon-no" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-no"></use>
-									</svg>
-								</td>
-								<td class="package-table__col gold">
-									<svg class="package-table__icon-no" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-no"></use>
-									</svg>
-								</td>
-								<td class="package-table__col gold">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-								<td class="package-table__col general">
-									<svg class="package-table__icon-yes" role="img" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-inline.svg#package-yes"></use>
-									</svg>
-								</td>
-							</tr>
 						</tbody>
 					</table>
 				</div>
