@@ -15,12 +15,23 @@ const queryPages = /* GraphQL */ `
   }
 `;
 
+const getUrl = image => image && image.asset && image.asset.url;
+
 const fetchData = async(client, vars) => {
   const data = await client.request(queryPages, vars).then(res => res.data);
 
+  const { animDelay } = data;
+
+  const tales = data.tales.map(({ image, title, value }, ind) => ({
+    title,
+    nums: value,
+    animDelay,
+    img: getUrl(image),
+    animation: !(ind % 2) ? 'fade-up' : 'fade-down',
+  }));
   return {
-    tales: data.tales,
-    animDelay: data.animDelay,
+    tileStats: tales,
+    animDelay,
   };
 };
 

@@ -1,0 +1,23 @@
+<section>
+  <div class="row-charts">
+    <div class="row-charts__left">
+      {% for item in chart.data %}
+      <div class="row-charts__item">
+        <div class="row-charts__title">{{item.title}}</div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="row-charts__right">
+      {% for item in chart.data %}
+      <div class="row-charts__item">
+        <div class="row-chart" style="width:{{item.percent}}%">
+          <div class="row-chart__graph">
+            <div class="row-chart__val">{{item.percent}}%</div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
