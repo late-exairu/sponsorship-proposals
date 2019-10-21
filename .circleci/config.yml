@@ -33,10 +33,10 @@ jobs:
           name: build website
           command: |
             if [ $CIRCLE_BRANCH = "master" ]; then
-              yarn build
+              cd frontend && yarn build
             fi
             if [ $CIRCLE_BRANCH = "develop" ]; then
-              yarn build
+              cd frontend && yarn build
             fi
 
       # Uncomment to build last year
@@ -46,8 +46,8 @@ jobs:
           name: deploy to remote
           command: |
             if [ $CIRCLE_BRANCH = "master" ]; then
-              ./node_modules/.bin/gulp deploy --user $FTP_USER --password $FTP_PASSWORD
+              cd frontend && ./node_modules/.bin/gulp deploy --user $FTP_USER --password $FTP_PASSWORD
             fi
             if [ $CIRCLE_BRANCH = "develop" ]; then
-              ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV --password $FTP_PASSWORD_DEV
+              cd frontend && ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV --password $FTP_PASSWORD_DEV
             fi
