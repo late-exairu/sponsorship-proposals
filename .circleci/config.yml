@@ -31,7 +31,7 @@ jobs:
 
       - save_cache:
           paths:
-            - node_modules
+            - frontend/node_modules
           key: v1-dependencies-{{ checksum "frontend/package.json" }}
 
       - run:
