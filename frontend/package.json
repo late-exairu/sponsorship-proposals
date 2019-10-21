@@ -1,5 +1,5 @@
 {
-  "name": "react-advanced-london",
+  "name": "gitnation-sponsorship-proposals",
   "version": "1.0.0",
   "scripts": {
     "ghpages": "git subtree push --prefix build origin gh-pages",
