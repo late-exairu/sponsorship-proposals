@@ -1,6 +1,4 @@
-if (!process.env.SANITY_ENDPOINT || !process.env.SANITY_TOKEN) {
-  require('dotenv').config();
-}
+require('dotenv').config();
 
 if (!process.env.SANITY_ENDPOINT || !process.env.SANITY_TOKEN) {
   throw new Error(`Can't find environment variables: 'SANITY_ENDPOINT' and 'SANITY_TOKEN'.
