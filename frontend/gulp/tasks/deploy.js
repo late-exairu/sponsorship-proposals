@@ -15,24 +15,8 @@ gulp.task('deploy', function() {
   });
 
   gulp.src([
-    './build/**/*.*'
-  ])
-    .pipe(conn.dest(remotePath));
-
-  gulp.src([
-    './sponsors/**/*.*',
-    '!./sponsors/node_modules/**/*.*',
+    `./build/${process.env.BRAND_NAME}/**/*.*`
   ])
     .pipe(conn.dest(`${remotePath}/sponsors`));
 
-  // uncomment to deploy last year versions
-  // gulp.src([
-  //   './2018/**/*.*'
-  // ])
-  //   .pipe(conn.dest(`${remotePath}/2018`));
-  //
-  // gulp.src([
-  //   './2017/**/*.*'
-  // ])
-  //   .pipe(conn.dest(`${remotePath}/2017`));
 });
