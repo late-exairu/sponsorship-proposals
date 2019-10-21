@@ -2,7 +2,6 @@
   "name": "gitnation-sponsorship-proposals",
   "version": "1.0.0",
   "scripts": {
-    "ghpages": "git subtree push --prefix build origin gh-pages",
     "build": "gulp build --production",
     "start": "gulp",
     "disabled_precommit": "lint-staged",
