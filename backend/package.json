@@ -28,5 +28,7 @@
     "react-dom": "^16.2",
     "sanity-plugin-datatable": "^1.0.5"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@sanity/cli": "^0.142.7"
+  }
 }
