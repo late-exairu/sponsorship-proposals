@@ -17,7 +17,7 @@ gulp.task('deploy', function() {
   gulp.src([
     `./build/${process.env.BRAND_NAME}/**/*.*`
   ])
-    .pipe(conn.differentSize((`${remotePath}/sponsors`))
+    .pipe(conn.differentSize(`${remotePath}/sponsors`))
     .pipe(conn.dest(`${remotePath}/sponsors`));
 
 });
