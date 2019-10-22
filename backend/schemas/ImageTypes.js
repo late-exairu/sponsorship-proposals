@@ -1,5 +1,5 @@
 export const Sponsor = {
-  type: "object",
+  type: "document",
   name: "sponsor",
   title: "Sponsor",
   fields: [
@@ -36,7 +36,7 @@ export const Sponsor = {
 };
 
 export const PartnerSlide = {
-  type: "object",
+  type: "document",
   name: "partnerSlide",
   title: "Partner Slide",
   fields: [

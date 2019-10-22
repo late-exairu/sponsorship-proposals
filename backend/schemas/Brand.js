@@ -237,7 +237,8 @@ export default {
       type: "array",
       of: [
         {
-          type: "partnerSlide",
+          type: "reference",
+          to: [{ type: "partnerSlide" }],
         },
       ],
     },
@@ -249,7 +250,8 @@ export default {
       type: "array",
       of: [
         {
-          type: "sponsor",
+          type: "reference",
+          to: [{ type: "sponsor" }],
         },
       ],
     },
