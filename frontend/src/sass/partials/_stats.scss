@@ -117,7 +117,7 @@ $content-selector: "~ .content > section";
 	$label-selector: $label-selector,
 	$slider-selector: $slider-selector,
 	$content-selector: $content-selector) {
-		
+
 	@for $i from 1 through $tab-count {
 		&:nth-of-type(#{$i}):checked {
 			#{$label-selector}:nth-child(#{$i}) {
@@ -145,10 +145,10 @@ $content-selector: "~ .content > section";
 	input[name="tab-control"] {
 		display: none;
 	}
-	
+
 	.content {
 		margin-top: 30px;
-		
+
 		section {
 			display: none;
 			animation: {
@@ -159,7 +159,7 @@ $content-selector: "~ .content > section";
 				iteration-count: 1;
 			}
 			line-height: 1.4;
-			
+
 			h2 {
 				display: none;
 				&::after {
@@ -174,7 +174,7 @@ $content-selector: "~ .content > section";
 			}
 		}
 	}
-	
+
 	input[name="tab-control"] {
 		@include tabs {}
 	}
@@ -441,7 +441,6 @@ $content-selector: "~ .content > section";
 		margin: 0;
 		max-width: 100%;
 		max-height: 250px;
-		stroke: #68f413;
 	}
 
 	&__svg-bg {

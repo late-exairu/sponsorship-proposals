@@ -5,12 +5,9 @@
 		<div class="features">
 			{% for item in features %}
 			<div class="feature" data-aos="{{item.animation}}" data-aos-delay="{{item.animDelay}}">
-				<div class="feature__img-wrap">
-          {{ item.svg | safe }}
-				</div>
+        {{ mixins.featureIcon(item.svg) }}
 
 				<h3 class="feature__title">{{item.title}}</h3>
-
 				<ul class="feature__list">
 					{% for line in item.description %}
 					<li>{{line}}</li>

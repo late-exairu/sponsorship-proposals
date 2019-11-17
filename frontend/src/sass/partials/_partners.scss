@@ -1,5 +1,5 @@
 .partners{
-	
+
 
 	&__video{
 		margin: 120px 0 90px;
@@ -37,17 +37,10 @@
 .recommendations{
 	padding: 148px 0 100px;
 
-	&:before{
-		content: '';
-		position: absolute;
-		left: 50%;
-		top: 55px;
-		transform: translateX(-50%);
-		width: 53px;
-		height: 43px;
-		background: #f00;
-		background: url(../img/quote-marks.svg) center center no-repeat;
-	}
+    &__quote{
+        text-align: center;
+        padding-top: 55px;
+    }
 
 	&__item{
 		outline: none;
@@ -163,7 +156,7 @@
 		&__pic{
 			width: 50px;
 			height: 50px;
-			
+
 		}
 
 		&__right{

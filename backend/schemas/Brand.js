@@ -58,8 +58,14 @@ export default {
       fieldset: "main",
     },
     {
-      name: "theme",
+      name: "themeD",
       title: "Theme color",
+      type: "color",
+      fieldset: "main",
+    },
+    {
+      name: "theme",
+      title: "Additional theme color",
       type: "color",
       fieldset: "main",
     },
