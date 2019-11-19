@@ -23,12 +23,19 @@ version: 2
 
 workflows:
   version: 2
-  master:
+  buildBrands:
     jobs:
       - reactSummit
-#          requires: *dependencies
+        requires: *dependenciesfilters:
+        filters:
+          branches:
+            only: develop
+
       - JSNation
-#          requires: *dependencies
+        requires: *dependencies
+        filters:
+          branches:
+            only: develop
 
 jobs:
   reactSummit:
