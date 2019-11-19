@@ -26,9 +26,9 @@ workflows:
   master:
     jobs:
       - reactSummit
-        requires: *dependencies
+#        requires: *dependencies
       - JSNation
-        requires: *dependencies
+#        requires: *dependencies
 
 jobs:
   reactSummit:
