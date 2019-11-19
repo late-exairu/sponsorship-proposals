@@ -42,6 +42,9 @@ workflows:
 
 jobs:
   "Dependencies":
+    docker:
+      - image: circleci/node:10
+
     steps: *dependencies
 
   reactSummit:
