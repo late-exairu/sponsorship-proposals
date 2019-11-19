@@ -25,13 +25,13 @@ workflows:
   version: 2
   buildBrands:
     jobs:
-      - reactSummit
+      - reactSummit:
           requires: *dependencies
           filters:
             branches:
               only: develop
 
-      - JSNation
+      - JSNation:
           requires: *dependencies
           filters:
             branches:
