@@ -9,6 +9,9 @@ const queryPages = /* GraphQL */ `
       theme {
         hex
       }
+      themeD {
+        hex
+      }
       gradient1 {
         hex
       }
