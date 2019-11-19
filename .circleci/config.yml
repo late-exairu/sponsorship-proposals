@@ -1,10 +1,37 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
+aliases:
+  - &dependencies
+    - checkout
+
+    # Download and cache dependencies
+    - restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "frontend/package.json" }}
+
+    - run:
+        name: install dependencies
+        command: |
+          if [ ! -d "frontend/node_modules" ]; then
+            cd frontend && yarn install
+          fi
+
+    - save_cache:
+        paths:
+          - frontend/node_modules
+        key: v1-dependencies-{{ checksum "frontend/package.json" }}
+
 version: 2
+
+workflows:
+  version: 2
+  master:
+    jobs:
+      - reactSummit
+        requires: *dependencies
+      - JSNation
+        requires: *dependencies
+
 jobs:
-  build:
+  reactSummit:
     docker:
       - image: circleci/node:10
 
@@ -13,46 +40,41 @@ jobs:
         - develop
 
     steps:
-      - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "frontend/package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run:
-          name: install dependencies
-          command: |
-            if [ ! -d "frontend/node_modules" ]; then
-              cd frontend && yarn install
-            fi
-
-      - save_cache:
-          paths:
-            - frontend/node_modules
-          key: v1-dependencies-{{ checksum "frontend/package.json" }}
 
       - run:
           name: build website
-          command: |
-            if [ $CIRCLE_BRANCH = "master" ]; then
-              cd frontend && yarn build
-            fi
-            if [ $CIRCLE_BRANCH = "develop" ]; then
-              cd frontend && yarn build
-            fi
-
-      # Uncomment to build last year
-      # - run: cd 2018 && yarn install && yarn build && cd ..
+          command: cd frontend && BRAND_NAME=reactSummit yarn build
 
       - run:
           name: deploy to remote
           command: |
             if [ $CIRCLE_BRANCH = "master" ]; then
-              cd frontend && ./node_modules/.bin/gulp deploy --user $FTP_USER --password $FTP_PASSWORD
+              cd frontend && BRAND_NAME=reactSummit ./node_modules/.bin/gulp deploy --user $FTP_USER --password $FTP_PASSWORD
             fi
             if [ $CIRCLE_BRANCH = "develop" ]; then
-              cd frontend && ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV --password $FTP_PASSWORD_DEV
+              cd frontend && BRAND_NAME=reactSummit ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV --password $FTP_PASSWORD_DEV
+            fi
+
+  JSNation:
+    docker:
+      - image: circleci/node:10
+
+    branches:
+      only:
+        - develop
+
+    steps:
+
+      - run:
+          name: build website
+          command: cd frontend && BRAND_NAME=JSNation yarn build
+
+      - run:
+          name: deploy to remote
+          command: |
+            if [ $CIRCLE_BRANCH = "master" ]; then
+              cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER --password $FTP_PASSWORD
+            fi
+            if [ $CIRCLE_BRANCH = "develop" ]; then
+              cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV_JSN --password $FTP_PASSWORD_DEV_JSN
             fi
