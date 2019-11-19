@@ -9,6 +9,7 @@ const brandIDs = {
   gitNation: '1o6NzKrOFXbjf0lhC4oNZr',
   reactAdvanced: '',
   berlinDay: '',
+  testColors: '5zVzYdcn3wk1Ik9FjPAv8I',
 };
 
 const credentials = {
