@@ -1,23 +1,25 @@
 aliases:
+  - &deps
+      - "Dependencies"
   - &dependencies
-    - checkout
+      - checkout
 
-    # Download and cache dependencies
-    - restore_cache:
-        keys:
-        - v1-dependencies-{{ checksum "frontend/package.json" }}
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "frontend/package.json" }}
 
-    - run:
-        name: install dependencies
-        command: |
-          if [ ! -d "frontend/node_modules" ]; then
-            cd frontend && yarn install
-          fi
+      - run:
+          name: install dependencies
+          command: |
+            if [ ! -d "frontend/node_modules" ]; then
+              cd frontend && yarn install
+            fi
 
-    - save_cache:
-        paths:
-          - frontend/node_modules
-        key: v1-dependencies-{{ checksum "frontend/package.json" }}
+      - save_cache:
+          paths:
+            - frontend/node_modules
+          key: v1-dependencies-{{ checksum "frontend/package.json" }}
 
 version: 2
 
@@ -25,13 +27,23 @@ workflows:
   version: 2
   buildBrands:
     jobs:
+      - "Dependencies"
       - reactSummit:
-          requires: *dependencies
+          requires: *deps
+          filters:
+            branches:
+              only: develop
 
       - JSNation:
-          requires: *dependencies
+          requires: *deps
+          filters:
+            branches:
+              only: develop
 
 jobs:
+  "Dependencies":
+    steps: *dependencies
+
   reactSummit:
     docker:
       - image: circleci/node:10
