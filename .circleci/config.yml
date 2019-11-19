@@ -27,15 +27,9 @@ workflows:
     jobs:
       - reactSummit:
           requires: *dependencies
-          filters:
-            branches:
-              only: develop
 
       - JSNation:
           requires: *dependencies
-          filters:
-            branches:
-              only: develop
 
 jobs:
   reactSummit:
