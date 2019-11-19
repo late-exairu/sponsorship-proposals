@@ -23,6 +23,8 @@ aliases:
 
       - persist_to_workspace:
           root: .
+          paths:
+            - frontend
 
 version: 2
 
