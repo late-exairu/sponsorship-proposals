@@ -26,16 +26,16 @@ workflows:
   buildBrands:
     jobs:
       - reactSummit
-        requires: *dependenciesfilters:
-        filters:
-          branches:
-            only: develop
+          requires: *dependencies
+          filters:
+            branches:
+              only: develop
 
       - JSNation
-        requires: *dependencies
-        filters:
-          branches:
-            only: develop
+          requires: *dependencies
+          filters:
+            branches:
+              only: develop
 
 jobs:
   reactSummit:
