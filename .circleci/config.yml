@@ -59,7 +59,7 @@ jobs:
 
     steps:
       - attach_workspace:
-          at: /tmp/workspace
+          at: .
 
       - run:
           name: build website
@@ -81,7 +81,7 @@ jobs:
 
     steps:
       - attach_workspace:
-          at: /tmp/workspace
+          at: .
 
       - run:
           name: build website
