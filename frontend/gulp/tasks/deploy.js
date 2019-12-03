@@ -14,8 +14,20 @@ gulp.task('deploy', function() {
     parallel: 10,
   });
 
+    // Always deploy HTML/CSS/JS
   gulp.src([
-    `./build/${process.env.BRAND_NAME}/**/*.*`
+    `./build/${process.env.BRAND_NAME}/*.*`,
+    `./build/${process.env.BRAND_NAME}/css/**/*.*`,
+    `./build/${process.env.BRAND_NAME}/js/**/*.*`
+  ])
+    .pipe(conn.dest(`${remotePath}/sponsors`));
+
+  // Compare size of other files before deploy
+  gulp.src([
+    `./build/${process.env.BRAND_NAME}/**/*.*`,
+    `!./build/${process.env.BRAND_NAME}/*.*`,
+    `!./build/${process.env.BRAND_NAME}/css/**/*.*`,
+    `!./build/${process.env.BRAND_NAME}/js/**/*.*`
   ])
     .pipe(conn.differentSize(`${remotePath}/sponsors`))
     .pipe(conn.dest(`${remotePath}/sponsors`));
