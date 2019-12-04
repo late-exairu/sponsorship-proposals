@@ -14,13 +14,23 @@ gulp.task('deploy', function() {
     parallel: 10,
   });
 
-    // Always deploy HTML/CSS/JS
+  // Always deploy HTML
   gulp.src([
-    `./build/${process.env.BRAND_NAME}/*.*`,
-    `./build/${process.env.BRAND_NAME}/css/**/*.*`,
-    `./build/${process.env.BRAND_NAME}/js/**/*.*`
+    `./build/${process.env.BRAND_NAME}/*.*`
   ])
     .pipe(conn.dest(`${remotePath}/sponsors`));
+
+  // Always deploy CSS
+  gulp.src([
+    `./build/${process.env.BRAND_NAME}/css/**/*.*`
+  ])
+    .pipe(conn.dest(`${remotePath}/sponsors/css`));
+
+  // Always deploy JS
+  gulp.src([
+    `./build/${process.env.BRAND_NAME}/js/**/*.*`
+  ])
+    .pipe(conn.dest(`${remotePath}/sponsors/js`));
 
   // Compare size of other files before deploy
   gulp.src([
