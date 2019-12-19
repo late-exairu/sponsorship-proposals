@@ -30,7 +30,7 @@ version: 2
 
 workflows:
   version: 2
-  build:
+  buildBrands:
     jobs:
       - "Dependencies"
       - reactSummit:
