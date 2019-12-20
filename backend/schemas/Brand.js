@@ -74,12 +74,14 @@ export default {
       title: "Gradient 1",
       type: "color",
       fieldset: "main",
+      hidden: true,
     },
     {
       name: "gradient2",
       title: "Gradient 2",
       type: "color",
       fieldset: "main",
+      hidden: true,
     },
     {
       name: "mainUrl",
