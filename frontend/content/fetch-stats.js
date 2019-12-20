@@ -20,6 +20,8 @@ const Types = {
   rowCharts: "rowCharts",
 };
 
+const sum = a => a.reduce((s, { percent: v }) => s + v, 0);
+
 const fetchData = async (client, vars) => {
   const data = await client
     .request(queryPages, vars)
@@ -31,8 +33,12 @@ const fetchData = async (client, vars) => {
     tabTitle: graph.title,
     checked: !ind,
     data: graph.data.rows
-      .map(({ cells: [title, percent] }) => ({ percent, title }))
-      .filter(({ percent }) => percent !== "null" && percent !== null),
+      .map(({ cells: [title, percent] }) => ({ percent: +percent, title }))
+      .filter(({ percent }) => percent && percent !== "null")
+      .map(({ percent, title }, _, array) => ({
+        percent: Math.round((percent * 100) / sum(array)),
+        title,
+      })),
   }));
 
   return {
