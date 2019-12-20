@@ -15,12 +15,12 @@ const queryPages = /* GraphQL */ `
 `;
 
 const Types = {
-  columnCharts: 'columnCharts',
-  circleCharts: 'circleCharts',
-  rowCharts: 'rowCharts',
+  columnCharts: "columnCharts",
+  circleCharts: "circleCharts",
+  rowCharts: "rowCharts",
 };
 
-const fetchData = async(client, vars) => {
+const fetchData = async (client, vars) => {
   const data = await client
     .request(queryPages, vars)
     .then(res => res.data.stats);
@@ -30,7 +30,9 @@ const fetchData = async(client, vars) => {
     tabId: `tab${ind + 1}`,
     tabTitle: graph.title,
     checked: !ind,
-    data: graph.data.rows.map(({cells: [title, percent]}) => ({ percent, title })),
+    data: graph.data.rows
+      .map(({ cells: [title, percent] }) => ({ percent, title }))
+      .filter(({ percent }) => percent !== "null" && percent !== null),
   }));
 
   return {
