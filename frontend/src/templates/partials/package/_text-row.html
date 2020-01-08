@@ -3,7 +3,7 @@
     {{ feature.title | safe }}
   </td>
 
-  {% for item in packages %}
+  {% for item in packagesTable %}
     <td class="package-table__col silver">{{ item[feature.field] }}</td>
   {% endfor %}
 </tr>
