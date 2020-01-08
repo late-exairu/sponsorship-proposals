@@ -23,3 +23,15 @@
 	</div>
 {% endmacro %}
 
+{% macro featureIcon(svg) %}
+  <div class="feature__img-wrap">
+    <div class="feature__img-background">
+      <svg xmlns="http://www.w3.org/2000/svg" width="94" height="94"><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="23.496" y1="6.29" x2="70.504" y2="87.71"><stop offset=".25" stop-color=var(--clr-theme)/><stop offset="1" stop-color=var(--clr-themeD)/></linearGradient><circle cx="47" cy="47" r="47" fill="url(#a)"/></svg>
+    </div>
+    <div class="feature__img-container">
+      {{ svg | safe }}
+    </div>
+  </div>
+
+{% endmacro %}
+

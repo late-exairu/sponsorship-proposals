@@ -1,0 +1,14 @@
+<section>
+  <div class="column-charts">
+    {% for item in chart.data %}
+    <div class="column-charts__item">
+      <div class="column-chart" style="height:{{item.percent}}%">
+        <div class="column-chart__graph">
+          <div class="column-chart__val">{{item.percent}}%</div>
+        </div>
+      </div>
+      <div class="column-charts__title">{{item.title}}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

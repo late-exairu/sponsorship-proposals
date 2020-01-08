@@ -16,7 +16,7 @@ export default {
     },
     {
       name: "data",
-      title: "Date",
+      title: "Data",
       type: "table",
     },
   ],

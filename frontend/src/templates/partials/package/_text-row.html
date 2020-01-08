@@ -1,0 +1,9 @@
+<tr class="package-table__row">
+  <td class="package-table__col desc">
+    {{ feature.title }}
+  </td>
+
+  {% for item in packages %}
+    <td class="package-table__col silver">{{ item[feature.field] }}</td>
+  {% endfor %}
+</tr>

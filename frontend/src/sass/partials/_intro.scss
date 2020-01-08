@@ -4,19 +4,6 @@
 	min-height: calc(100vh - 50px);
 	background: var(--clr-white);
 
-	&:before{
-		content: '';
-		position: absolute;
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		background: var(--clr-theme);
-		z-index: 0;
-		background: url(../img/intro-bg.jpg) center center no-repeat;
-		background-size: cover;
-	}
-
 	&__bg{
 		position: absolute;
 		left: 0;

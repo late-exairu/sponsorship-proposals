@@ -6,47 +6,47 @@ export default {
     {
       name: "intro",
       title: "Intro Block",
-      options: { collapsible: true, collapsed: false },
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: "motivation",
       title: "Motivation Block",
-      options: { collapsible: true, collapsed: false },
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: "stats",
       title: "Stats Block",
-      options: { collapsible: true, collapsed: false },
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: "tiles",
       title: "Tiles Block",
-      options: { collapsible: true, collapsed: false },
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: "packages",
       title: "Packages",
-      options: { collapsible: true, collapsed: false },
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: "partners",
       title: "Partners Block",
-      options: { collapsible: true, collapsed: false },
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: "sponsors",
       title: "Sponsors Block",
-      options: { collapsible: true, collapsed: false },
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: "info",
       title: "General Information",
-      options: { collapsible: true, collapsed: false },
+      options: { collapsible: true, collapsed: true },
     },
     {
       name: "main",
       title: "Main",
-      options: { collapsible: true, collapsed: false },
+      options: { collapsible: true, collapsed: true },
     },
   ],
   fields: [
@@ -58,8 +58,14 @@ export default {
       fieldset: "main",
     },
     {
-      name: "theme",
+      name: "themeD",
       title: "Theme color",
+      type: "color",
+      fieldset: "main",
+    },
+    {
+      name: "theme",
+      title: "Additional theme color",
       type: "color",
       fieldset: "main",
     },
@@ -68,12 +74,14 @@ export default {
       title: "Gradient 1",
       type: "color",
       fieldset: "main",
+      hidden: true,
     },
     {
       name: "gradient2",
       title: "Gradient 2",
       type: "color",
       fieldset: "main",
+      hidden: true,
     },
     {
       name: "mainUrl",
@@ -237,7 +245,8 @@ export default {
       type: "array",
       of: [
         {
-          type: "partnerSlide",
+          type: "reference",
+          to: [{ type: "partnerSlide" }],
         },
       ],
     },
@@ -249,7 +258,8 @@ export default {
       type: "array",
       of: [
         {
-          type: "sponsor",
+          type: "reference",
+          to: [{ type: "sponsor" }],
         },
       ],
     },

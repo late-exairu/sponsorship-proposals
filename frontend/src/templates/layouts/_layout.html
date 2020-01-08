@@ -16,6 +16,24 @@
 	<meta property="og:image" content=""/>
 	<meta name="twitter:card" content=""/>
 	<meta name="twitter:site" content=""/>
+  <style>
+    .intro:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: var({{ main.theme.hex }});
+      z-index: 0;
+      background: url({{ info.introBackground.asset.url }}) center center no-repeat;
+      background-size: cover;
+    }
+    :root {
+      --clr-theme: {{ main.theme.hex }};
+      --clr-themeD: {{ main.themeD.hex }};
+    }
+  </style>
 </head>
 
 <body>
