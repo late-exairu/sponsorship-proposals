@@ -1,16 +1,25 @@
 const queryPages = /* GraphQL */ `
   query($brandId: ID!) {
     data: Brand(id: $brandId) {
+      pageTitle
+      pageDescription
+      sponsorsUrl
       twitterUrl
       facebookUrl
       youtubeUrl
       mediumUrl
       slackUrl
+      gaugesTrackingId
       email
       contactUrl
       introTitle
       introSubtitle
       logo {
+        asset {
+          url
+        }
+      }
+      ogImage {
         asset {
           url
         }

@@ -52,6 +52,18 @@ export default {
   fields: [
     // main
     {
+      name: "pageTitle",
+      title: "Page title",
+      type: "string",
+      fieldset: "main",
+    },
+    {
+      name: "pageDescription",
+      title: "Page Description",
+      type: "string",
+      fieldset: "main",
+    },
+    {
       name: "brand",
       title: "Brand",
       type: "string",
@@ -93,6 +105,18 @@ export default {
       name: "sponsorsUrl",
       title: "Sponsorship url",
       type: "url",
+      fieldset: "main",
+    },
+    {
+      name: "gaugesTrackingId",
+      title: "Gauges Tracking ID",
+      type: "string",
+      fieldset: "main",
+    },
+    {
+      title: "Background Image",
+      name: "ogImage",
+      type: "image",
       fieldset: "main",
     },
     // info
