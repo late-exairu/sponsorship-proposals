@@ -7,6 +7,7 @@
   "author": "Oleg Proskurin <oleg@gitnation.org>",
   "license": "UNLICENSED",
   "scripts": {
+    "sanity-login": "sanity login",
     "start": "sanity start",
     "test": "sanity check",
     "deploy": "sanity graphql deploy --playground",
