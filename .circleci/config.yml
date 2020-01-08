@@ -69,10 +69,10 @@ jobs:
           name: deploy to remote
           command: |
             if [ $CIRCLE_BRANCH = "master" ]; then
-              cd frontend && BRAND_NAME=reactSummit ./node_modules/.bin/gulp deploy --user $FTP_USER --password $FTP_PASSWORD
+              cd frontend && BRAND_NAME=reactSummit ./node_modules/.bin/gulp deploy --user $FTP_USER_RS --password $FTP_PASSWORD_RS
             fi
             if [ $CIRCLE_BRANCH = "develop" ]; then
-              cd frontend && BRAND_NAME=reactSummit ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV --password $FTP_PASSWORD_DEV
+              cd frontend && BRAND_NAME=reactSummit ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV_RS --password $FTP_PASSWORD_DEV_RS
             fi
 
   JSNation:
@@ -90,9 +90,9 @@ jobs:
       - run:
           name: deploy to remote
           command: |
-            if [ $CIRCLE_BRANCH = "master" ]; then
-              cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER --password $FTP_PASSWORD
-            fi
+#            if [ $CIRCLE_BRANCH = "master" ]; then
+#              cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER --password $FTP_PASSWORD
+#            fi
             if [ $CIRCLE_BRANCH = "develop" ]; then
               cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV_JSN --password $FTP_PASSWORD_DEV_JSN
             fi
