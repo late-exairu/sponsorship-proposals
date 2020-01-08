@@ -37,13 +37,16 @@ workflows:
           requires: *deps
           filters:
             branches:
-              only: develop
+              only:
+                - master
+                - develop
 
       - JSNation:
           requires: *deps
           filters:
             branches:
-              only: develop
+              only:
+                - develop
 
 jobs:
   "Dependencies":
@@ -90,9 +93,9 @@ jobs:
       - run:
           name: deploy to remote
           command: |
+            if [ $CIRCLE_BRANCH = "master" ]; then
+              cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER --password $FTP_PASSWORD
+            fi
             if [ $CIRCLE_BRANCH = "develop" ]; then
               cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV_JSN --password $FTP_PASSWORD_DEV_JSN
             fi
-#            if [ $CIRCLE_BRANCH = "master" ]; then
-#              cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER --password $FTP_PASSWORD
-#            fi
