@@ -1,6 +1,6 @@
 <tr class="package-table__row">
   <td class="package-table__col desc">
-    {{ feature.title }}
+    {{ feature.title | safe }}
   </td>
 
   {% for item in packages %}
