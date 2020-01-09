@@ -73,6 +73,7 @@ jobs:
           command: |
             if [ $CIRCLE_BRANCH = "master" ]; then
               cd frontend && BRAND_NAME=reactSummit ./node_modules/.bin/gulp deploy --user $FTP_USER_RS --password $FTP_PASSWORD_RS
+              curl -X POST -H 'Content-type: application/json' --data '{"text":"React Summit sponsor proposal is deployed '$CIRCLE_BUILD_URL'"}' $SLACK_CMS_UPDATE_WEBHOOK
             fi
             if [ $CIRCLE_BRANCH = "develop" ]; then
               cd frontend && BRAND_NAME=reactSummit ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV_RS --password $FTP_PASSWORD_DEV_RS
@@ -95,6 +96,7 @@ jobs:
           command: |
             if [ $CIRCLE_BRANCH = "master" ]; then
               cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER --password $FTP_PASSWORD
+              curl -X POST -H 'Content-type: application/json' --data '{"text":"JSNation sponsor proposal is deployed '$CIRCLE_BUILD_URL'"}' $SLACK_CMS_UPDATE_WEBHOOK
             fi
             if [ $CIRCLE_BRANCH = "develop" ]; then
               cd frontend && BRAND_NAME=JSNation ./node_modules/.bin/gulp deploy --user $FTP_USER_DEV_JSN --password $FTP_PASSWORD_DEV_JSN
