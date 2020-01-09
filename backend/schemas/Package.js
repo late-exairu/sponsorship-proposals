@@ -102,7 +102,12 @@ export default {
       ],
     },
     // Features
-
+    {
+      name: "hideInTable",
+      title: "Don't show this package in table",
+      type: "boolean",
+      fieldset: "features",
+    },
     {
       name: "featSoldout",
       title: "Sold Out",

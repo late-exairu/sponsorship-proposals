@@ -84,7 +84,9 @@
 				<li class="stuff-list__item">
 					<div class="stuff-list__left">
 						<img class="stuff-list__pic" src="{{stuffItem.image.asset.url}}">
-						<a class="stuff-list__more" href="{{stuffItem.moreLink}}">more photos</a>
+            {% if stuffItem.moreLink %}
+              <a class="stuff-list__more" href="{{stuffItem.moreLink}}">more photos</a>
+            {% endif %}
 					</div>
 					<div class="stuff-list__right">
 						<h4 class="stuff-list__title">{{stuffItem.title}}</h4>

@@ -18,6 +18,7 @@ const queryPages = /* GraphQL */ `
         description
         markdown
         options
+        hideInTable
         rightImage {
           asset {
             url
@@ -124,8 +125,12 @@ const fetchData = async(client, vars) => {
         })),
   }));
 
+  const packagesResolved = await Promise.all(packages);
+  const packagesTable = packagesResolved.filter(({ hideInTable }) => !hideInTable);
+
   return {
-    packages,
+    packages: packagesResolved,
+    packagesTable,
     packageSlides: data.packageSlides,
     packegeTabs: [
       {

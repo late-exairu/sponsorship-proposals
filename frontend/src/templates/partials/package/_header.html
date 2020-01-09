@@ -1,7 +1,7 @@
 <tr class="package-table__row head">
   <td class="package-table__col desc"></td>
 
-  {% for item in packages %}
+  {% for item in packagesTable %}
     <td class="package-table__col silver">
       <span class="{% if item.featSoldout %} sold-out {% endif %}">{{ item.title }}</span>
       <p class="package-table__price">{{ item.featPrice | safe }}</p>

@@ -1,11 +1,26 @@
-# Sanity Blogging Content Studio
+# GitNation generic sponsorship proposal (Backend Service)
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+Backend project provides:
 
-Now you can do the following things:
+- GraphQL API endpoint: https://ee2bu90g.api.sanity.io/v1/graphql/prod/default
+- Sanity Studio application
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- Check out the example frontend: [React/Next.js](https://github.com/sanity-io/tutorial-sanity-blog-react-next)
-- [Read the blog post about this template](https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+## Scripts
+
+`start` - to launch local Sanity Studio.
+
+Open browser on http://localhost:3333/
+
+>Warning! It will be connected to real backend database.
+
+`deploy` - apply schema to GraphQL service
+
+Open https://ee2bu90g.api.sanity.io/v1/graphql/prod/default for GraphQL Playground
+
+`deploy:studio` - deploys Sanity Studio SPA
+
+>Note: you need to be logged in to Sanity for deploying. use `sanity-login`
+
+## Developing
+
+see `schemas/schema.js` for entry point of schema
