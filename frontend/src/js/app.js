@@ -61,7 +61,8 @@ $(function() {
 		variableWidth: true,
 		infinite: true,
 		slidesToShow: 1,
-		autoplay: 2500,
+		autoplay: true,
+		autoplaySpeed: 5000,
 		pauseOnHover: false,
 		responsive: [
 			{
@@ -87,9 +88,9 @@ $(function() {
 		dots: true,
 		infinite: true,
 		slidesToShow: 1,
-		adaptiveHeight: true,
 		arrows: false,
-		autoplay: 2500,
+		autoplay: true,
+		autoplaySpeed: 5000,
 		pauseOnHover: false
 	});
 
