@@ -82,6 +82,18 @@ export default {
       fieldset: "main",
     },
     {
+      name: "introOverlay",
+      title: "Intro section overlay color fallback",
+      type: "color",
+      fieldset: "main",
+    },
+    {
+      name: "introOverlayText",
+      title: "Intro section text color",
+      type: "color",
+      fieldset: "main",
+    },
+    {
       name: "gradient1",
       title: "Gradient 1",
       type: "color",
@@ -120,7 +132,7 @@ export default {
       fieldset: "main",
     },
     {
-      title: "Background Image",
+      title: "OG Image",
       name: "ogImage",
       type: "image",
       fieldset: "main",
@@ -168,7 +180,7 @@ export default {
       fieldset: "info",
     },
     {
-      title: "Contact URL",
+      title: "Custom contact URL (instead of mailto)",
       name: "contactUrl",
       type: "url",
       fieldset: "info",
@@ -193,8 +205,14 @@ export default {
       fieldset: "intro",
     },
     {
-      title: "Background Image",
+      title: "Header Background Image",
       name: "introBackground",
+      type: "image",
+      fieldset: "intro",
+    },
+    {
+      title: "Inverted Header Background Image for overlay",
+      name: "introBackgroundInverted",
       type: "image",
       fieldset: "intro",
     },

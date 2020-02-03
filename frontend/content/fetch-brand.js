@@ -12,6 +12,12 @@ const queryPages = /* GraphQL */ `
       themeD {
         hex
       }
+      introOverlay {
+        hex
+      }
+      introOverlayText {
+        hex
+      }
       gradient1 {
         hex
       }

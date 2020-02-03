@@ -3,6 +3,7 @@ const queryPages = /* GraphQL */ `
     data: Brand(id: $brandId) {
       stats {
         title
+        tabTitle
         type
         data {
           rows {
@@ -30,7 +31,7 @@ const fetchData = async (client, vars) => {
   const stats = data.map((graph, ind) => ({
     ...graph,
     tabId: `tab${ind + 1}`,
-    tabTitle: graph.title,
+    tabTitle: graph.tabTitle,
     checked: !ind,
     data: graph.data.rows
       .map(({ cells: [title, percent] }) => ({ percent: +percent, title }))

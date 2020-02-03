@@ -6,7 +6,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="css/style.css?v3" />
+	<link rel="stylesheet" href="css/style.css?v4" />
 	<link rel="shortcut icon" href="img/favicon.png"/>
 	<meta name="description" content="{{ info.pageDescription }}" />
 	<meta property="og:url" content="{{ info.sponsorsUrl }}"/>
@@ -14,21 +14,13 @@
 	<meta property="og:description" content="{{ info.pageDescription }}"/>
 	<meta property="og:image" content="{{ info.ogImage.asset.url }}"/>
   <style>
-    .intro:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background: var({{ main.theme.hex }});
-      z-index: 0;
-      background: url({{ info.introBackground.asset.url }}) center center no-repeat;
-      background-size: cover;
-    }
     :root {
       --clr-theme: {{ main.theme.hex }};
       --clr-themeD: {{ main.themeD.hex }};
+      --clr-intro-overlay: {{ main.introOverlay.hex }};
+      --clr-intro-overlay-text: {{ main.introOverlayText.hex }};
+      --introBackground: url({{ info.introBackground.asset.url }});
+      --introBackground-inverted: url({{ info.introBackgroundInverted.asset.url }});
     }
   </style>
 </head>

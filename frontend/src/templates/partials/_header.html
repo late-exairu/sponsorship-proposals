@@ -19,7 +19,11 @@
 					{% endif %}
 				</nav>
 
-				<a class="header__btn" href="mailto:{{ info.email }}">Contact Us</a>
+        {% if info.contactUrl %}
+				<a class="header__btn" href="mailto:{{ info.contactUrl }}">Contact Us</a>
+        {% else %}
+        <a class="header__btn" href="mailto:{{ info.email }}">Contact Us</a>
+        {% endif %}
 			</div>
 		</div>
 	</header><!-- .header -->

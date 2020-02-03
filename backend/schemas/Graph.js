@@ -9,6 +9,11 @@ export default {
       type: "string",
     },
     {
+      name: "tabTitle",
+      title: "Tab Title",
+      type: "string",
+    },
+    {
       name: "type",
       title: "Type (Enum)",
       type: "string",

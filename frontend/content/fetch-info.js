@@ -30,6 +30,11 @@ const queryPages = /* GraphQL */ `
           url
         }
       }
+      introBackgroundInverted {
+        asset {
+          url
+        }
+      }
     }
   }
 `;
