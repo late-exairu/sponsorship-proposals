@@ -42,6 +42,19 @@
 
 </div>
 
+{% if info.googleTrackingId %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ info.googleTrackingId }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ info.googleTrackingId }}');
+</script>
+{% endif %}
+
+{% if info.gaugesTrackingId %}
 <script type="text/javascript">
 	var _gauges = _gauges || [];
 	(function() {
@@ -56,6 +69,7 @@
 		s.parentNode.insertBefore(t, s);
 	})();
 </script>
+{% endif %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>

@@ -114,6 +114,12 @@ export default {
       fieldset: "main",
     },
     {
+      name: "googleTrackingId",
+      title: "Google Analytics Tracking ID",
+      type: "string",
+      fieldset: "main",
+    },
+    {
       title: "Background Image",
       name: "ogImage",
       type: "image",
