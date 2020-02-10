@@ -5,7 +5,8 @@
 }
 
 .packages-switch{
-	width: 78px;
+	width: 132px;
+	font-size: 16px;
 	position: absolute;
 	right: 0;
 	top: 4px;
@@ -15,16 +16,30 @@
 	border-radius: 5px;
 	list-style: none;
 	display: flex;
-	padding: 5px 10px;
+	padding: 0;
+	box-shadow: 14px 14px 17px rgba(0, 0, 0, 0.15);
 
-	&__item{
+	.packages-switch__item{
 		outline: none;
-		padding: 5px;
+		padding: 10px 15px;
 		cursor: pointer;
+		color: var(--clr-black);
+		text-decoration: none;
 
-		&:hover .packages-switch__img,
-		&.active .packages-switch__img{
-			fill: var(--clr-themeD);
+		&.active{
+			background: linear-gradient(to top, var(--clr-theme), var(--clr-themeD))
+		}
+
+		&:hover{
+			
+		}
+
+		&:first-child{
+			border-radius: 5px 0 0 5px;
+		}
+
+		&:last-child{
+			border-radius: 0 5px 5px 0;
 		}
 	}
 
@@ -45,12 +60,19 @@
 }
 
 .package-slider{
+	width: auto;
 	margin: 0 -30px;
 	user-select: text;
 
 	&__item{
 		outline: none;
 		padding: 0 30px 20px;
+	}
+
+	.owl-dot{
+		width: 10px;
+		height: 10px;
+		background: #f00 !important;
 	}
 
 	@include med{
@@ -63,10 +85,11 @@
 	padding: 0;
 	margin: 25px 0 20px;
 	list-style: none;
+	flex-wrap: wrap;
 
 	&__item{
 		cursor: pointer;
-		width: 25%;
+		width: 33.3%;
 		padding: 20px;
 		background: transparent;
 		/*transition: all ease 0.3s;
@@ -316,6 +339,7 @@
 
 
 .packages-slider{
+	width: auto;
 	position: relative;
 	padding: 0;
 	margin: 100px -1000px 0;
@@ -330,7 +354,24 @@
 			opacity: 0.5;
 		}
 
-		&.slick-current{
+		&.center{
+
+			.packages-slider__wrap{
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+	}
+
+	.owl-item{
+
+		.packages-slider__wrap{
+			transition: all ease .5s;
+			transform: scale(0.9);
+			opacity: 0.5;
+		}
+
+		&.center{
 
 			.packages-slider__wrap{
 				transform: scale(1);
@@ -357,6 +398,34 @@
 		margin: 0;
 		padding: 0;
 		color: var(--clr-white);
+	}
+
+	.owl-prev,
+	.owl-next{
+		font-size: 18px;
+		font-weight: 400;
+		z-index: 2;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin: 0 0 0 -40vw;
+		transform: translate(-50%, -50%);
+		width: 100px;
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: transparent;
+		color: var(--clr-text);
+		border: none;
+		outline: none;
+		cursor: pointer;
+		text-transform: lowercase;
+		background: #f00;
+	}
+
+	.owl-next{
+		margin: 0 0 0 40vw;
 	}
 
 	.slick-prev,
