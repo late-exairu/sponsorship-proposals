@@ -1,10 +1,12 @@
 <section class="section partners" id="partners">
 	<div class="container">
 		<h3 class="section__title">Partners</h3>
-    <div class="recommendations__quote">
-      <svg xmlns="http://www.w3.org/2000/svg" width="53" height="43"><path fill=var(--clr-theme) d="M0 43V31.101c0-6.237.766-11.352 2.303-15.345C3.838 11.763 6.46 8.37 10.173 5.58 13.885 2.79 18.056.931 22.69 0v9.519c-3.294 1.86-5.163 4.349-5.61 7.468h5.61V43H0zm30.31 0V31.101c0-6.237.766-11.352 2.303-15.345 1.535-3.992 4.145-7.385 7.829-10.176S48.311.931 53 0v9.519c-3.294 1.86-5.163 4.349-5.61 7.468H53V43H30.31z"/></svg>
-    </div>
-		<ul class="recommendations recom-slider">
+
+	    <div class="recommendations__quote">
+	      <svg xmlns="http://www.w3.org/2000/svg" width="53" height="43"><path fill=var(--clr-theme) d="M0 43V31.101c0-6.237.766-11.352 2.303-15.345C3.838 11.763 6.46 8.37 10.173 5.58 13.885 2.79 18.056.931 22.69 0v9.519c-3.294 1.86-5.163 4.349-5.61 7.468h5.61V43H0zm30.31 0V31.101c0-6.237.766-11.352 2.303-15.345 1.535-3.992 4.145-7.385 7.829-10.176S48.311.931 53 0v9.519c-3.294 1.86-5.163 4.349-5.61 7.468H53V43H30.31z"/></svg>
+	    </div>
+	    
+		<ul class="recommendations recom-slider owl-carousel">
 			{% for item in partners %}
 			<li class="recommendations__item">
 				<p class="recommendations__text">{{item.text | safe}}</p>
@@ -23,21 +25,21 @@
 		</ul>
 
 		{% for item in sponsors %}
-			<div class="sponsors-block {{item.mod}}">
-				{% if item.title %}
-				<div class="sponsors-block__title">{{item.title}}</div>
-				{% endif %}
+		<div class="sponsors-block {{item.mod}}">
+			{% if item.title %}
+			<div class="sponsors-block__title">{{item.title}}</div>
+			{% endif %}
 
-				<ul class="sponsors-block__list">
-					{% for sponsor in item.list %}
-						<li class="sponsors-block__item">
-							<a href="{{sponsor.link}}" target="_blank">
-								<img src="{{sponsor.image.asset.url}}" alt="{{sponsor.name}}" width="{{sponsor.width}}">
-							</a>
-						</li>
-					{% endfor %}
-				</ul>
-			</div>
+			<ul class="sponsors-block__list">
+				{% for sponsor in item.list %}
+					<li class="sponsors-block__item">
+						<a href="{{sponsor.link}}" target="_blank">
+							<img src="{{sponsor.image.asset.url}}" alt="{{sponsor.name}}" width="{{sponsor.width}}">
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
 		{% endfor %}
 
 		<iframe class="partners__video" data-aos="zoom-in" src="{{ youtubeVideo }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

@@ -44,6 +44,7 @@
 
 	&__item{
 		outline: none;
+		list-style: none;
 	}
 
 	&__text{
@@ -90,6 +91,30 @@
 		}
 	}
 
+	.owl-dots{
+		margin: 50px 0 0;
+		display: flex;
+		justify-content: center;
+
+		.owl-dot{
+			margin: 0 4px;
+			width: 7px;
+			height: 7px;
+			background: #767575;
+			opacity: 0.5;
+			display: block;
+			border-radius: 3.5px;
+			border: none;
+			font: 0/0 a;
+			cursor: pointer;
+			outline: none;
+
+			&.active{
+				opacity: 1;
+			}
+		}
+	}
+
 	@include lg{
 
 		&__text{
@@ -131,7 +156,7 @@
 	}
 
 	&__pic{
-		width: 64px;
+		width: 64px !important;
 		height: 64px;
 		border-radius: 50%;
 	}
@@ -154,7 +179,7 @@
 		margin: 20px auto 0;
 
 		&__pic{
-			width: 50px;
+			width: 50px !important;
 			height: 50px;
 
 		}
