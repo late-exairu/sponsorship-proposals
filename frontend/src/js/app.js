@@ -68,6 +68,7 @@ $(function() {
 		startPosition: 'URLHash',
 		dots: true,
 		dotsData: true,
+		autoHeight:true,
 		dotsContainer: '#packages-switch'
 	});
 
